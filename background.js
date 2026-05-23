@@ -16,11 +16,11 @@ chrome.runtime.onInstalled.addListener(() => {
   const menu = (id, title, contexts, parentId, documentUrlPatterns) => 
     chrome.contextMenus.create({ id, title, contexts, parentId, documentUrlPatterns });
 
-  menu("WF", "WonderForest", ["all"]);
-  menu("KeyPointsLocal", "Key Points (Local)", ["all"], "WF");
-  menu("KeyPointsGemini", "Key Points (Gemini)", ["all"], "WF");
-  menu("FormalVideoTranscript", "Formal Video Transcript", ["video", "link"], "WF", ["*://*.youtube.com/*"]);
-  menu("Wonderizer", "I was wondering...", ["selection"], "WF");
+  menu("AL", "AlectraLens", ["all"]);
+  menu("KeyPointsLocal", "Key Points (Local)", ["all"], "AL");
+  menu("KeyPointsGemini", "Key Points (Gemini)", ["all"], "AL");
+  menu("FormalVideoTranscript", "Formal Video Transcript", ["video", "link"], "AL", ["*://*.youtube.com/*"]);
+  menu("Wonderizer", "I was wondering...", ["selection"], "AL");
 });
 
 async function handleAction(tabId, type, url, selectionText) {
@@ -51,7 +51,7 @@ async function runDiscuss(type, url, selectionText) {
 
   el.innerHTML = `
     <div id="discuss-header" style="background:#f1f3f5;padding:10px;border-bottom:1px solid #a2a9b1;display:flex;justify-content:space-between;align-items:center;cursor:move;user-select:none;">
-      <strong>WonderForest</strong>
+      <strong>AlectraLens</strong>
       <button id="discuss-close" style="font-size:20px;cursor:pointer;">&times;</button>
     </div>
     <div id="discuss-messages" style="flex:1;overflow:auto;padding:12px;background:#fafbfc;"></div>

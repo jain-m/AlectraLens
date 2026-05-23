@@ -1,14 +1,14 @@
-# WonderForest Chrome Extension
+# AlectraLens Chrome Extension
 
-WonderForest is a Chrome extension that adds quick summarization and content analysis tools to the browser. It supports local model summarization and Gemini API summarization, plus transcript processing for YouTube videos.
+AlectraLens is a Chrome extension that adds quick summarization and content analysis tools to the browser. It supports local model summarization and Gemini API summarization, plus transcript processing for YouTube videos.
 
-Repository: https://github.com/jain-m/chrome-ext
+Repository: https://github.com/jain-m/AlectraLens
 
 ## Clone from GitHub
 
 ```bash
-git clone https://github.com/jain-m/chrome-ext.git
-cd chrome-ext
+git clone https://github.com/jain-m/AlectraLens.git
+cd AlectraLens
 ```
 
 ## Features
@@ -42,8 +42,8 @@ cd chrome-ext
 2. Go to `chrome://extensions`.
 3. Enable `Developer mode` in the top-right.
 4. Click `Load unpacked`.
-5. Select the `chrome-extension` project folder.
-6. The extension should appear as `WonderForest`.
+5. Select the `AlectraLens` project folder.
+6. The extension should appear as `AlectraLens`.
 
 ## Configure the API key
 
@@ -69,7 +69,7 @@ The extension will request transcripts from `http://localhost:3000/get-transcrip
   - `Key Points (Gemini)`
   - `Formal Transcript`
   - `Wonderer`
-- Or right-click on the page and choose the same commands from the `WonderForest` menu.
+- Or right-click on the page and choose the same commands from the `AlectraLens` menu.
 - For video transcripts, open a YouTube watch page first.
 
 ## Notes
