@@ -6,6 +6,11 @@
   "author": "Manisha Jain",
   "homepage_url": "https://github.com/jain-m/AlectraLens",
   "action": {"default_popup": "popup.html"},
+  "icons": {
+    "16": "icons/icon16.svg",
+    "48": "icons/icon48.svg",
+    "128": "icons/icon128.svg"
+  },
   "permissions": ["contextMenus", "scripting", "activeTab", "storage"],
   "options_page": "options.html",
   "host_permissions": [ "<all_urls>" ],

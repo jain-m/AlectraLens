@@ -116,3 +116,9 @@ The extension will request transcripts from `http://localhost:3000/get-transcrip
 - If the extension does not load, verify the folder contains `manifest.json`.
 - If the local model fails, confirm a local server is available at `http://localhost:11434`.
 - If Gemini returns an error, verify your API key is correct and the network is available.
+
+## License
+
+This project is released under the MIT License. See the full license in the [LICENSE](LICENSE) file.
+
+Copyright (c) 2026 jain-m (Manisha Jain)
