@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2026 jain-m (Manisha Jain)
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+*/
+
 document.getElementById('btnKeyPointsLocal').onclick = () => sendMessage("KeyPointsLocal");
 document.getElementById('btnKeyPointsGemini').onclick = () => sendMessage("KeyPointsGemini");
 document.getElementById('btnWonder').onclick = () => sendMessage("Wonderizer");

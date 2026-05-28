@@ -1,3 +1,9 @@
+/*
+Copyright (c) 2026 jain-m (Manisha Jain)
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+*/
+
 const getKey = async () => (await chrome.storage.local.get(['MY_API_KEY'])).MY_API_KEY || (console.warn("API Key missing"), null);
 
 (async function listMyModels() {
@@ -13,8 +19,12 @@ const getKey = async () => (await chrome.storage.local.get(['MY_API_KEY'])).MY_A
 
 // --- Context Menu (Right-click) ---
 chrome.runtime.onInstalled.addListener(() => {
-  const menu = (id, title, contexts, parentId, documentUrlPatterns) => 
-    chrome.contextMenus.create({ id, title, contexts, parentId, documentUrlPatterns });
+  const menu = (id, title, contexts, parentId, documentUrlPatterns) => {
+    const options = { id, title, contexts };
+    if (parentId) options.parentId = parentId;
+    if (documentUrlPatterns) options.documentUrlPatterns = documentUrlPatterns;
+    chrome.contextMenus.create(options);
+  };
 
   menu("AL", "AlectraLens", ["all"]);
   menu("KeyPointsLocal", "Key Points (Local)", ["all"], "AL");
@@ -294,6 +304,7 @@ async function runDiscuss(type, url, selectionText) {
 async function runWonderizer(passedText) {
   const model = "gemini-2.5-flash";
   const modelKey = await getKey();
+  if (!modelKey) throw new Error('Gemini API key is required for Wonderizer.');
   const selected = passedText || document.body.innerText, uiId = "wf-wonder";
   const prompt = "Summarize core idea & generate 5 prompts (Clarify, Challenge, etc) that are 10 words max.";
   const format = "a markdown bulleted list starting each line with a dash";
@@ -310,7 +321,7 @@ async function runWonderizer(passedText) {
   document.body.appendChild(el);
 
   try {
-    const res = await fetch(`${url}?key=${key}`, {
+    const res = await fetch(`${url}?key=${modelKey}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ contents: [{ parts: [{ text: `${prompt} Format: ${format}. Content: ${selected.slice(0, 5000)}` }] }] })

@@ -1,3 +1,9 @@
+<!--
+Copyright (c) 2026 jain-m (Manisha Jain)
+This software is released under the MIT License.
+https://opensource.org/licenses/MIT
+-->
+
 # AlectraLens Chrome Extension
 
 AlectraLens is a Chrome extension that adds quick summarization and content analysis tools to the browser. It supports local model summarization and Gemini API summarization, plus transcript processing for YouTube videos.
@@ -33,8 +39,33 @@ cd AlectraLens
 
 - Chrome or another Chromium-based browser.
 - Python 3 installed for the optional transcript server.
-- A Gemini API key if using `Key Points (Gemini)`.
-- A local model server running at `http://localhost:11434` for `Key Points (Local)`.
+- A Gemini API key from https://aistudio.google.com/app/api-keys when using `Key Points (Gemini)`
+- Ollama installed and a local model server running at `http://localhost:11434` for `Key Points (Local)`.
+
+## Local Ollama setup
+
+`Key Points (Local)` uses a local Ollama endpoint at `http://localhost:11434/api/generate` with the model `gemma4:e4b`.
+
+1. Install Ollama from https://ollama.com.
+2. Start the Ollama API server on port `11434`:
+
+```bash
+ollama serve --listen 0.0.0.0:11434
+```
+
+3. Install a compatible model, such as `gemma4` / `gemma4:e4b`:
+
+```bash
+ollama install gemma4
+```
+
+4. Confirm the service is running:
+
+```bash
+curl http://localhost:11434/v1/models
+```
+
+If your local model uses a different name, update the `model` field in `background.js` accordingly.
 
 ## Install the extension locally
 
