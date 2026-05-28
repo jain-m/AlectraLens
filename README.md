@@ -6,6 +6,8 @@ https://opensource.org/licenses/MIT
 
 # AlectraLens Chrome Extension
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 AlectraLens is a Chrome extension that adds quick summarization and content analysis tools to the browser. It supports local model summarization and Gemini API summarization, plus transcript processing for YouTube videos.
 
 Repository: https://github.com/jain-m/AlectraLens
